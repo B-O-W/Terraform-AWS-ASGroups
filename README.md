@@ -18,7 +18,7 @@ A **launch configuration** specifies the EC2 instance configuration that an AS
 
 main.tf
 
-```json
+```terraform
 data "aws_ami" "amazon-2" {
   most_recent = true
 
@@ -66,7 +66,7 @@ An ASG is a logical grouping of EC2 instances running the same configuration. AS
 
 main.tf
 
-```json
+```javascript
 resource "aws_autoscaling_group" "terramino" {
   name                 = "terramino"
   min_size             = 1
