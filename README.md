@@ -1,5 +1,7 @@
 # Terraform Manage AWS Auto Scaling Groups
 
+![Untitled](Terraform%20Manage%20AWS%20Auto%20Scaling%20Groups%202ff5e7a405fe43278f6ad3f71497a811/Untitled.png)
+
 ## Prerequisites
 
 This tutorial assumes that you are familiar with the standard Terraform workflow. If you are new to Terraform, complete the [Get Started tutorials](https://learn.hashicorp.com/collections/terraform/aws-get-started) first.
@@ -339,9 +341,9 @@ Next, use `cURL`to send a request to the `lb_endpoint`output, which reports th
 curl $(terraform output -raw lb_endpoint)
 ```
 
-![Untitled](Terraform%20Manage%20AWS%20Auto%20Scaling%20Groups%2099bcf0dd7b9642b79266cc7479ebc289/Untitled.png)
+![Untitled](Terraform%20Manage%20AWS%20Auto%20Scaling%20Groups%202ff5e7a405fe43278f6ad3f71497a811/Untitled%201.png)
 
-![Untitled](Terraform%20Manage%20AWS%20Auto%20Scaling%20Groups%2099bcf0dd7b9642b79266cc7479ebc289/Untitled%201.png)
+![Untitled](Terraform%20Manage%20AWS%20Auto%20Scaling%20Groups%202ff5e7a405fe43278f6ad3f71497a811/Untitled%202.png)
 
 # ****Useful Documentation:****
 
