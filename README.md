@@ -66,7 +66,7 @@ An ASG is a logical grouping of EC2 instances running the same configuration. AS
 
 main.tf
 
-```javascript
+```terraform
 resource "aws_autoscaling_group" "terramino" {
   name                 = "terramino"
   min_size             = 1
@@ -102,7 +102,7 @@ The `aws_lb` resource creates an application load balancer, which routes traff
 
 [alb-target-group.tf](http://alb-target-group.tf/)
 
-```json
+```terraform
 resource "aws_lb" "terramino" {
   name               = "learn-asg-terramino-lb"
   internal           = false
@@ -116,7 +116,7 @@ The `[aws_lb_listener` resource](https://registry.terraform.io/providers/hashi
 
 alb-target-group.tf
 
-```json
+```terraform
 resource "aws_lb_listener" "terramino" {
   load_balancer_arn = aws_lb.terramino.arn
   port              = "80"
@@ -133,7 +133,7 @@ A target group defines the collection of instances your load balancer sends traf
 
 alb-target-group.tf
 
-```json
+```terraform
 resource "aws_lb_target_group" "terramino" {
   name     = "learn-asg-terramino"
   port     = 80
@@ -160,7 +160,7 @@ This configuration also defines two security groups: one to associate with your 
 
 security-group.tf
 
-```json
+```terraform
 resource "aws_security_group" "terramino_instance" { #For EC2 with Dynamic SG
   name = "learn-asg-terramino-instance"
 
@@ -241,7 +241,7 @@ Open egress for install a lot of dependency for user-data.sh
 
 For example:
 
-```json
+```terraform
 Outputs:
 application_endpoint = "[https://learn-asg-terramino-lb-1572171601.us-east-2.elb.amazonaws.com/index.php](https://learn-asg-terramino-lb-1572171601.us-east-2.elb.amazonaws.com/index.php)"
 asg_name = "terramino"
@@ -252,7 +252,7 @@ lb_endpoint = "[https://learn-asg-terramino-lb-1572171601.us-east-2.elb.amazonaw
 
 I changed [output.tf](http://output.tf) to this configuration 
 
-```json
+```terraform
 output "lb_endpoint" {
   value = "http://${aws_lb.terramino.dns_name}"
 }
