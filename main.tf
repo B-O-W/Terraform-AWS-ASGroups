@@ -13,7 +13,6 @@ resource "aws_launch_configuration" "terramino" {
   name_prefix     = "learn-terraform-aws-asg-"
   image_id        =  data.aws_ami.amazon-2.id
   instance_type   = "t2.micro"
-  key_name        = "elbrus-2"
   user_data       = file("user-data.sh")
   security_groups = [aws_security_group.terramino_instance.id]
 
